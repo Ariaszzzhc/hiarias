@@ -75,6 +75,23 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: even
 
+# Hexo-Offline
+offline:
+  maximumFileSizeToCacheInBytes: 5242880
+  staticFileGlobs:
+    - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
+    - /lib/**/*.js
+    - /js/**/*.js
+    - 
+
+  stripPrefix: public
+  verbose: true
+  runtimeCaching:
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: unpack.com
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
