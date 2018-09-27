@@ -18,7 +18,7 @@ Kotlin Native是为了解决在一些平台上（比如嵌入式，iOS）无法�
 
 前往Kotlin Native的官方[Repo](https://github.com/JetBrains/kotlin-native)的Release页面获取最新的编译器
 
-![](/iamges/1.png)
+![](/images/1.png)
 
 下载解压后，为了能够在命令行中直接使用，我们需要在`~/.zshrc `中添加对应的环境变量
 
@@ -29,7 +29,7 @@ export PATH=$KOTLIN_NATIVE_HOME/bin:$PATH:
 
 之后`source ~/.zshrc`刷新一哈，检查是否安装成功
 
-![](/iamges/2.png)
+![](/images/2.png)
 
 如果正确弹出版本信息，则安装成功了！
 
