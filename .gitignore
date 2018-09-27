@@ -6,6 +6,7 @@ node_modules/
 public/
 .deploy*/
 .vscode
+logs
 hook_config.php
 hook_config.php
 latest_update.log
