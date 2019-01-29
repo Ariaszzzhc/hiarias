@@ -102,6 +102,11 @@ gitalk:
   adminUser: Ariaszzzhc
   distractionFreeMode: true
 
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

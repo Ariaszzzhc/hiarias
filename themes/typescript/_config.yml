@@ -42,6 +42,8 @@ less:
 # use url, not username
 social:
 - slug: email
-  url: mailto:ariaszzzhc@qq.cim
+  url: mailto:ariaszzzhc@qq.com
 - slug: github
   url: https://github.com/Ariaszzzhc
+- slug: rss
+  url: /atom.xml
