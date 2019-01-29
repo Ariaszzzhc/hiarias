@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: even
+theme: typescript
 
 # Hexo-Offline
 offline:
@@ -91,6 +91,16 @@ offline:
       handler: cacheFirst
       options:
         origin: unpack.com
+
+# Gitalk
+gitalk:
+  enable: true
+  githubID: Ariaszzzhc
+  repo: hiarias
+  ClientID: aeeb8d40e235a733a88b
+  ClientSecret: e3bd52ec3fb27c4eaec96efc4be7011ae43d274a
+  adminUser: Ariaszzzhc
+  distractionFreeMode: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
