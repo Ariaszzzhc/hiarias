@@ -97,8 +97,8 @@ gitalk:
   enable: true
   githubID: Ariaszzzhc
   repo: hiarias
-  ClientID: aeeb8d40e235a733a88b
-  ClientSecret: e3bd52ec3fb27c4eaec96efc4be7011ae43d274a
+  ClientID: 3611f654025d66587638
+  ClientSecret: c7419ab7efce6e15b1b7ae2eaf7419bb23ec6043
   adminUser: Ariaszzzhc
   distractionFreeMode: true
 
