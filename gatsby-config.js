@@ -85,7 +85,7 @@ module.exports = {
           repo: "hiarias",
           admin: ["Ariaszzzhc"],
           owner: "Ariaszzzhc",
-          distractionFreeMode: true
+          // distractionFreeMode: true
         }
       }
     },

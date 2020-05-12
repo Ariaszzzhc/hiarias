@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Bio from "../components/bio"
 import '../style/index.css'
+import 'gitalk/dist/gitalk.css'
 
 
 interface Data {
