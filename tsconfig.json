@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "noImplicitAny": true,
+      "module": "commonjs",
+      "target": "esnext",
+      "jsx": "preserve",
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "experimentalDecorators": true,
+      "lib": [
+        "dom",
+        "ESNext"
+      ]
+    },
+    "exclude": ["node_modules", "public", ".cache"]
+  }
+  

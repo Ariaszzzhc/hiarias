@@ -1,2 +1,2 @@
-# Arias个人博客
-地址 https://www.hiarias.com
+# 个人博客 Personal Blog
+https://www.hiarias.com
