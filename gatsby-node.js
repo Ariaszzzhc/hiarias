@@ -34,7 +34,9 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges
 
-  posts.forEach((post, index) => {
+  posts
+  .filter((post) => !post.node.fields.draft)
+  .forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
 
@@ -59,6 +61,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
+    })
+    createNodeField({
+      node,
+      name: "draft",
+      value: Boolean(node.frontmatter.draft),
     })
   }
 }
