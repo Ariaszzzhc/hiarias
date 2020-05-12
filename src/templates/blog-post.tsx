@@ -25,8 +25,8 @@ const BlogPostTemplate = ({ data, pageContext, location }: BlogPostTemplateProps
   const { previous, next } = pageContext
 
   const gitalkConfig = {
-    id: post.slug || post.id,
-    title: post.title,
+    id: post.id,
+    title: post.frontmatter.title,
   }
 
   return (
