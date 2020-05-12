@@ -84,7 +84,8 @@ module.exports = {
           clientSecret: "c7419ab7efce6e15b1b7ae2eaf7419bb23ec6043",
           repo: "hiarias",
           admin: ["Ariaszzzhc"],
-          owner: "Ariaszzzhc"
+          owner: "Ariaszzzhc",
+          distractionFreeMode: true
         }
       }
     },
