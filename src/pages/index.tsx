@@ -5,7 +5,9 @@ import { PageProps, Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Bio from "../components/bio"
+import 'milligram'
 import '../style/index.css'
+import "../style/layout.css"
 import 'gitalk/dist/gitalk.css'
 
 

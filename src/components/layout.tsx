@@ -1,8 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import Bio from './bio'
-import "../style/layout.css"
-import 'milligram'
 
 
 interface LayoutProps {
