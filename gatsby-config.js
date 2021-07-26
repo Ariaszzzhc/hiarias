@@ -3,20 +3,14 @@ module.exports = {
     title: `Arias's Blog`,
     author: {
       name: `Ariaszzzhc`,
-      summary: {
-        status: '',
-        tags: [
-          'Kotlin',
-          'C/C++',
-          'NodeJs'
-        ]
-      }
+      summary: ""
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://www.hiarias.com`,
     github: `https://github.com/Ariaszzzhc`,
   },
   plugins: [
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,8 +21,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -38,7 +32,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 630,
             },
           },
           {
@@ -58,10 +52,61 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: "G-0RX4W8KLWR",
       },
     },
-    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map(node => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ "content:encoded": node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  nodes {
+                    excerpt
+                    html
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      title
+                      date
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -71,25 +116,11 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/favicon.png`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-typescript`,
-    {
-      resolve: `gatsby-plugin-gitalk`,
-      options: {
-        config: {
-          clientID: "3611f654025d66587638",
-          clientSecret: "c7419ab7efce6e15b1b7ae2eaf7419bb23ec6043",
-          repo: "hiarias",
-          admin: ["Ariaszzzhc"],
-          owner: "Ariaszzzhc",
-          // distractionFreeMode: true
-        }
-      }
-    },
-    `gatsby-plugin-netlify-cms`
+    "gatsby-plugin-material-ui"
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
