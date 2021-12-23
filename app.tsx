@@ -1,12 +1,16 @@
 import React, { FC } from "react";
 import Header from "./components/Header.tsx";
 import "https://unpkg.com/normalize.css@8.0.1/normalize.css";
+import Landing from "./components/Landing.tsx";
+import Footer from "./components/Footer.tsx";
+import "./styles/remixicon.css";
+import "./styles/global.css";
 
 type Metadata = {
-  title?: string
-  description?: string
-  keywords?: string
-}
+  title?: string;
+  description?: string;
+  keywords?: string;
+};
 
 export default function App(
   { Page, pageProps }: {
@@ -14,29 +18,19 @@ export default function App(
     pageProps: Record<string, unknown>;
   },
 ) {
-
-  if (Page.meta) {
-    return (
-      <>
-        <head>
-          <title>{Page.meta.title}</title>
-          <meta name="description" content={Page.meta.description} />
-          <meta name="keywords" content={Page.meta.keywords} />
-        </head>
-        <Header />
-        <main>
-          <Page {...pageProps} />
-        </main>
-      </>
-    );
-  }
-
   return (
-    <>
+    <div>
       <Header />
-      <main>
-        <Page {...pageProps} />
-      </main>
-    </>
+      <Landing text="Hello, World!" />
+      <div className="container mx-auto px-4">
+        <div
+          id="body"
+          className="relative bg-white rounded-lg shadow-md mt-0 py-4"
+        >
+          <Page {...pageProps} />
+        </div>
+      </div>
+      <Footer />
+    </div>
   );
 }

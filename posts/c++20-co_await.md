@@ -146,7 +146,7 @@ int main() {
 
 编译运行这段代码
 
-![](./1.png)
+![](/images/c++20-co_await-1.png)
 
 大功告成！
 

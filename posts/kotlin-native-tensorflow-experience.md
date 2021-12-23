@@ -3,13 +3,14 @@ title: Kotlin Native Tensorflow 初体验
 date: 2018-09-27 16:18:08
 tags:
 description: "随着Kotlin 1.3RC的发布，Kotlin Native也发布了0.9.2版本（看Changelog貌似也加入了协程的支持）Kotlin Native是为了解决在一些平台上（比如嵌入式，iOS）无法使用虚拟机的问题而提出。其实个人感觉其最大的噱头还是能够跟C进行交互（甚至能编译到wasm！）最近机器学习挺火的，尤其是TensorFlow，同时TensorFlow又开放了C API。于是突发奇想用Kotlin结合TensorFlow的C API体验一下"
+banner: /images/kotlin-native-tensorflow-experience-3.png
 ---
 
 ## 获取Kotlin Native编译器
 
 前往Kotlin Native的官方[Repo](https://github.com/JetBrains/kotlin-native)的Release页面获取最新的编译器
 
-![](./1.png)
+![](/images/kotlin-native-tensorflow-experience-1.png)
 
 下载解压后，为了能够在命令行中直接使用，我们需要在`~/.zshrc `中添加对应的环境变量
 
@@ -20,7 +21,7 @@ export PATH=$KOTLIN_NATIVE_HOME/bin:$PATH:
 
 之后`source ~/.zshrc`刷新一哈，检查是否安装成功
 
-![](./2.png)
+![](/images/kotlin-native-tensorflow-experience-2.png)
 
 如果正确弹出版本信息，则安装成功了！
 
@@ -32,7 +33,7 @@ export PATH=$KOTLIN_NATIVE_HOME/bin:$PATH:
 
 下载下来之后我们可以看下这个library里有什么内容
 
-![](./3.png)
+![](/images/kotlin-native-tensorflow-experience-3.png)
 
 可以看到这个library包含了头文件以及对应的链接库
 
@@ -58,7 +59,7 @@ cinterop -def tensorflow.def -compilerOpts -I./libtensorflow-cpu-darwin-x86_64-1
 klib contents tensorflow.klib
 ```
 
-![](./4.png)
+![](/images/kotlin-native-tensorflow-experience-4.png)
 
 可以看到内容多到看不完！于是我们可以导出为`*.kt`文件方便我们使用编辑器查看
 
@@ -91,7 +92,7 @@ konanc hello.kt -l tensorflow.klib -linker-options ./libtensorflow-cpu-darwin-x8
 
 然后我们运行它
 
-![](./5.png)
+![](/images/kotlin-native-tensorflow-experience-5.png)
 
 报错了，提示没找到libtensorflow.so。由于我们下载的TensorFlow的library并没有放在系统链接库的目录而是我们自己指定的目录，程序运行的时候会在`当前目录`以及`系统目录`去寻找所需要的动态链接库。因此，解决方案有两种：
 
@@ -100,7 +101,7 @@ konanc hello.kt -l tensorflow.klib -linker-options ./libtensorflow-cpu-darwin-x8
 
 然后我们再次运行它
 
-![](./6.png)
+![](/images/kotlin-native-tensorflow-experience-6.png)
 
 成功了！欢呼雀跃吧！
 
@@ -197,7 +198,7 @@ fi
 
 整个项目的结构大致是这样子的
 
-![](./7.png)
+![](/images/kotlin-native-tensorflow-experience-7.png)
 
 最后我们运行
 
@@ -205,7 +206,7 @@ fi
 ./gradlew run
 ```
 
-![](./8.png)
+![](/images/kotlin-native-tensorflow-experience-8.png)
 
 大功告成！撒花！
 

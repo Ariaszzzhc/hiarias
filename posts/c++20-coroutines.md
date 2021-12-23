@@ -145,6 +145,6 @@ int main() {
 
 接下来就是令人激动的时刻了, 我们运行这段代码.  Just do it!
 
-![](./1.png)
+![](/images/c++20-coroutines-1.png)
 
 大功告成！
