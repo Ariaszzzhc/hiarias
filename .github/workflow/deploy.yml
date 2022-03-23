@@ -1,26 +1,19 @@
-name: ci
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+name: Deploy
+on: [push]
 
 jobs:
   deploy:
-    name: deploy
-    runs-on: alpine-latest
+    name: Deploy
+    runs-on: ubuntu-latest
     permissions:
-      id-token: write
-      contents: read
+      id-token: write # Needed for auth with Deno Deploy
+      contents: read # Needed to clone the repository
 
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
 
-      - name: Install Deno
+            - name: Install Deno
         uses: denoland/setup-deno@main
         with:
           deno-version: 1.18.2
@@ -28,8 +21,8 @@ jobs:
       - name: Build site
         run: deno run -A https://deno.land/x/pagic/mod.ts build
 
-      - name: Deploy to Deno Deploy
+      - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: hiarias
-          entrypoint: serve.ts
+          project: "hiarias"
+          entrypoint: "./serve.ts"
