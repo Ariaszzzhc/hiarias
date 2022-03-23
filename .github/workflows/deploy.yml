@@ -19,7 +19,7 @@ jobs:
           deno-version: 1.18.2
 
       - name: Build site
-        run: deno run -A https://deno.land/x/pagic/mod.ts build
+        run: deno run --unstable -A https://deno.land/x/pagic/mod.ts build
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
