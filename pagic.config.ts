@@ -2,10 +2,21 @@ export default {
   srcDir: "pages",
   outDir: "_site",
   theme: "blog",
-  plugins: ["blog"],
+  plugins: ["blog", "gitalk", "ga"],
   title: "Arias's Blog",
   description: "欢迎来到我的博客",
   github: "https://github.com/Ariaszzzhc",
+  ga: {
+    id: "UA-115297697-1",
+  },
+  gitalk: {
+    clientId: "3611f654025d66587638",
+    clientSecret: "c7419ab7efce6e15b1b7ae2eaf7419bb23ec6043",
+    repo: "hiarias",
+    owner: "Ariaszzzhc",
+    admin: ["Ariaszzzhc"],
+    pagerDirection: "first",
+  },
   blog: {
     root: "/posts",
     social: {
