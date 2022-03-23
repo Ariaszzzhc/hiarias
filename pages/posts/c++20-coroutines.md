@@ -1,7 +1,8 @@
 ---
 title: "C++20 Coroutine 初探"
 date: 2020-05-12 16:49:23
-tags: C++ 协程
+tags:
+  - C++ 协程
 description: "C++20标准早已确定。时至今日，各大编译器也已经支持了Coroutine，是时候体验下C++的协程了! "
 ---
 
@@ -145,6 +146,6 @@ int main() {
 
 接下来就是令人激动的时刻了, 我们运行这段代码.  Just do it!
 
-![](./1.png)
+![](../assets/c++20-coroutines/1.png)
 
 大功告成！

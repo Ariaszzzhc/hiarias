@@ -1,7 +1,8 @@
 ---
 title: "C++20 协程: co_await"
 date: 2020-05-15 12:23:12
-tags: C++ 协程
+tags:
+  - C++ 协程
 description: "C++20中最为重要的关键字就是 co_await"
 ---
 
@@ -146,7 +147,7 @@ int main() {
 
 编译运行这段代码
 
-![](./1.png)
+![](../assets/c++20-co_await/1.png)
 
 大功告成！
 
