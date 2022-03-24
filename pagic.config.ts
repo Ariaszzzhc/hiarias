@@ -9,7 +9,7 @@ export default {
     id: "UA-115297697-1",
   },
   gitalk: {
-    clientId: "3611f654025d66587638",
+    clientID: "3611f654025d66587638",
     clientSecret: "c7419ab7efce6e15b1b7ae2eaf7419bb23ec6043",
     repo: "hiarias",
     owner: "Ariaszzzhc",
