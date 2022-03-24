@@ -2,7 +2,7 @@ export default {
   srcDir: "pages",
   outDir: "_site",
   theme: "blog",
-  plugins: ["blog", "gitalk", "ga"],
+  plugins: ["gitalk", "ga", "blog"],
   title: "Arias's Blog",
   description: "欢迎来到我的博客",
   github: "https://github.com/Ariaszzzhc",
