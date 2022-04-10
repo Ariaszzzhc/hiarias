@@ -1,0 +1,95 @@
+baseURL = "https://www.hiarias.com"
+languageCode = "zh-CN"
+title = "Arias's Blog"
+hasCJKLanguage = true
+
+theme = "LoveIt"
+
+enableRobotsTXT = true
+enableGitInfo = true
+enableEmoji = true
+
+
+[params]
+  # LoveIt 主题版本
+  version = "0.2.X"
+  gitRepo = "https://github.com/Ariaszzzhc/hiarias"
+
+[markup]
+  # 语法高亮设置 (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+    pre = ""
+    # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+    post = ""
+    name = "文章"
+    url = "/posts/"
+    # 当你将鼠标悬停在此菜单链接上时, 将显示的标题
+    title = ""
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "标签"
+    url = "/tags/"
+    title = ""
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "分类"
+    url = "/categories/"
+    title = ""
+    weight = 3
+
+[params.home.profile]
+  enable = true
+  gravatarEmail = "ariaszzzhc@outlook.com"
+  title = ""
+  disclaimer = ""
+  social = true
+  subtitle = "I'm no one."
+  typeit = true
+  avatarURL = "/images/avatar.png"
+
+[params.page.comment.gitalk]
+  enable = true
+  owner = "Ariaszzzhc"
+  repo = "hiarias"
+  clientId = "3611f654025d66587638"
+  clientSecret = "c7419ab7efce6e15b1b7ae2eaf7419bb23ec6043"
+
+[analytics]
+  enable = true
+  [analytics.google]
+    id = "UA-115297697-1"
+    anonymizeIP = true
+
+
+[params.social]
+  [params.social.github]
+    # 排列图标时的权重 (权重越大, 图标的位置越靠后)
+    weight = 1
+    # 你的社交 ID
+    id = "Ariaszzzhc"
+
+  [params.social.email]
+    weight = 3
+    id = "ariaszzzhc@outlook.com"
+
+  [params.social.bilibili]
+    weight = 2
+    id = "6549181"
+
+[author]
+  name = "Ariaszzzhc"
+  email = "ariaszzzhc@outlook.com"
+  link = "https://github.com/Ariaszzzhc"

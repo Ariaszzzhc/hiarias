@@ -1,2 +1,2 @@
 # Arias 博客
-Deno & Pagic & Deno Deploy
+Hugo & LoveIt & Deno Deploy
