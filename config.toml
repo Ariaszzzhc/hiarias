@@ -50,26 +50,46 @@ enableEmoji = true
     title = ""
     weight = 3
 
-[params.home.profile]
-  enable = true
-  gravatarEmail = "ariaszzzhc@outlook.com"
-  title = ""
-  disclaimer = ""
-  social = true
-  subtitle = "I'm no one."
-  typeit = true
-  avatarURL = "/images/avatar.png"
+[params.home]
+  rss = 10
+  [params.home.profile]
+    enable = true
+    gravatarEmail = ""
+    title = ""
+    disclaimer = ""
+    social = true
+    subtitle = "I'm no one."
+    typeit = true
+    avatarURL = "/images/avatar.png"
 
-[params.page.comment.gitalk]
+[params.footer]
   enable = true
-  owner = "Ariaszzzhc"
-  repo = "hiarias"
-  clientId = "3611f654025d66587638"
-  clientSecret = "c7419ab7efce6e15b1b7ae2eaf7419bb23ec6043"
+    # LoveIt 新增 | 0.2.0 自定义内容 (支持 HTML 格式)
+  custom = ''
+  # LoveIt 新增 | 0.2.0 是否显示 Hugo 和主题信息
+  hugo = true
+  # LoveIt 新增 | 0.2.0 是否显示版权信息
+  copyright = true
+  # LoveIt 新增 | 0.2.0 是否显示作者
+  author = true
+  # 网站创立年份
+  since = 2018
 
-[analytics]
+[params.page]
+  [params.page.comment]
+    enable = true
+
+    [params.page.comment.gitalk]
+      enable = true
+      owner = "Ariaszzzhc"
+      repo = "hiarias"
+      clientId = "3611f654025d66587638"
+      clientSecret = "c7419ab7efce6e15b1b7ae2eaf7419bb23ec6043"
+
+
+[params.analytics]
   enable = true
-  [analytics.google]
+  [params.analytics.google]
     id = "UA-115297697-1"
     anonymizeIP = true
 
