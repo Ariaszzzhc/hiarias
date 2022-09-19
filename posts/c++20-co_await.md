@@ -1,6 +1,6 @@
 ---
 title: "C++20 协程: co_await"
-date: 2020-05-15 12:23:12
+publish_date: 2020-05-15
 tags:
   - C++ 协程
 description: "C++20中最为重要的关键字就是 co_await"
@@ -10,7 +10,7 @@ description: "C++20中最为重要的关键字就是 co_await"
 
 打开 `<coroutine>`可以看到这两个结构体的源码是这样的
 
-```c++
+```cpp
 struct suspend_never {
   bool await_ready() const noexcept { return true; }
   void await_suspend(coroutine_handle<>) const noexcept {}
@@ -40,7 +40,7 @@ struct suspend_always {
 
 * 这里可能就有人要晕了, 又是`awaiter`又是`awaitable`. 那我们来举个例子
 
-  ```c++
+  ```cpp
   // include headers
   
   // using namespace
@@ -73,7 +73,7 @@ struct suspend_always {
 
 
 这些操作写成代码的形式大概如下:
-```c++
+```cpp
 {
   auto&& awaitable = <expr>;
   auto&& awaiter = get_awaiter(awaitable);
@@ -96,7 +96,7 @@ struct suspend_always {
 
 从上面的规则可以得出, 我们可以通过`awaiter.await_suspend(coroutine_handle<>)`函数, 来完成一些异步操作. 说了那么多, 就修改下上文 `future<void>` 的例子, 来实现一个类似其他语言协程的`delay`功能:
 
-``` c++
+```cpp
 // include headers
 
 // using namespace
