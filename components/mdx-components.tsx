@@ -26,4 +26,8 @@ export const MDXComponents: MDXComponentsType = {
   p: ({ className, ...restProps }) => (
     <p {...restProps} className={cn(className, "mb-6 leading-relaxed")} />
   ),
+
+  li: ({ className, ...restProps }) => (
+    <li {...restProps} className={cn(className, "mb-2")} />
+  ),
 };

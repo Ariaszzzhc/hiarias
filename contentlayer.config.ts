@@ -1,5 +1,5 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import rehypeStarryNight from "rehype-starry-night";
+import highlight from "rehype-highlight";
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -39,7 +39,7 @@ export default makeSource({
   documentTypes: [Post],
   mdx: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    rehypePlugins: [rehypeStarryNight as any],
+    rehypePlugins: [highlight as any],
   },
   date: {
     timezone: "Asia/Shanghai",

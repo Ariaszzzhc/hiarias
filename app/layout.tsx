@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import "highlight.js/styles/github.min.css";
 import { HeaderBar } from "@/components/header-bar";
 import { Footer } from "@/components/footer";
 
