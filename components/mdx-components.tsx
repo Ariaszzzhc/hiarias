@@ -30,4 +30,14 @@ export const MDXComponents: MDXComponentsType = {
   li: ({ className, ...restProps }) => (
     <li {...restProps} className={cn(className, "mb-2")} />
   ),
+
+  code: ({ className, ...restProps }) => (
+    <code
+      {...restProps}
+      className={cn(
+        className,
+        "leading-relaxed rounded-md !bg-[#f6f8fa] px-1 py-[0.1rem]"
+      )}
+    />
+  ),
 };
