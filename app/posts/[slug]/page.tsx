@@ -36,10 +36,15 @@ export default async function Post({ params }: Params) {
   }
 
   return (
-    <article>
-      <div>
-        <MDXContent code={post.body.code} />
-      </div>
-    </article>
+    <div>
+      <div className="py-8 text-5xl">{post.title}</div>
+      <p className="text-zinc-600 mb-8">{post.description}</p>
+      <div className="shrink-0 bg-border h-[1px] w-full"></div>
+      <article className="mt-12">
+        <div>
+          <MDXContent code={post.body.code} />
+        </div>
+      </article>
+    </div>
   );
 }

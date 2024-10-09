@@ -38,7 +38,8 @@ export default makeSource({
   contentDirPath: "posts",
   documentTypes: [Post],
   mdx: {
-    rehypePlugins: [rehypeStarryNight],
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    rehypePlugins: [rehypeStarryNight as any],
   },
   date: {
     timezone: "Asia/Shanghai",

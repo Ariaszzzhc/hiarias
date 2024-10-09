@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { HeaderBar } from "@/components/header-bar";
+import { Footer } from "@/components/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,6 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://esm.sh/@wooorm/starry-night@3/style/both.css"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -27,6 +34,7 @@ export default function RootLayout({
         <div id="main-body" className="container mx-auto">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );
