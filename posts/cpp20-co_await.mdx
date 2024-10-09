@@ -1,6 +1,6 @@
 ---
 title: "C++20 协程: co_await"
-publish_date: 2020-05-15
+date: 2020-05-15
 tags:
   - C++ 协程
 description: "C++20中最为重要的关键字就是 co_await"
@@ -24,7 +24,7 @@ struct suspend_always {
 }
 ```
 
-这俩玩意儿都有一样的3个成员函数`bool await_ready()`, `void await_suspend(coroutine_handle<>)`, `void await_resume()`. 在C++ 20的标准中, 拥有这3个成员函数的类型被称为`awaiter`类型. 
+这俩玩意儿都有一样的3个成员函数`bool await_ready()`, `void await_suspend(coroutine_handle<>)`, `void await_resume()`. 在C++ 20的标准中, 拥有这3个成员函数的类型被称为`awaiter`类型.
 
 
 
@@ -34,7 +34,7 @@ struct suspend_always {
 
 #### 获取`awaiter`对象
 
-* 这一步的操作可以通过操作符重载完成. 
+* 这一步的操作可以通过操作符重载完成.
 
 * 如果没有对应的重载函数则最后的`awaiter`为`awaitable`本身
 
@@ -42,22 +42,22 @@ struct suspend_always {
 
   ```cpp
   // include headers
-  
+
   // using namespace
-  
+
   /** class resumable {
   ...
   } **/
-  
+
   resumable foo() {
     cout << "Hello, ";
     co_await async(launch::deferred, [](){
       this_thread::sleep_for(chrono::seconds(2));
     }); // 这里 async(...) 的值为 awaitable, 由于我们没有给future<void>重载 co_await 运算符
     		// 因此此处最后的 awaiter 对象就是 future<void>
-    cout << "world!" << endl; 
+    cout << "world!" << endl;
   }
-  
+
   ```
 
   但是`future<void>`不符合我们上文所说的`awaiter`类型的条件, 所以这个代码是没有办法编译的
@@ -82,10 +82,10 @@ struct suspend_always {
     using handle_t = std::experimental::coroutine_handle<Promise>;
 
     <suspend-coroutine>
-    
+
     awaiter.await_suspend(handle_t::from_promise(p));
     <return-to-caller-or-resumer>
-    
+
     <resume-point>
   }
 
@@ -132,7 +132,7 @@ auto delay(int sec) {
 
 resumable foo() {
   using time = chrono::system_clock;
-  
+
   cout << time::to_time_t(time::now()) << " Hello, " << endl;
   co_await delay(2);
   cout << time::to_time_t(time::now()) << " world!" << endl;

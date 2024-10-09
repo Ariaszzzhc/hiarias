@@ -1,6 +1,6 @@
 ---
 title: "C++20 Coroutine 初探"
-publish_date: 2020-05-12
+date: 2020-05-12
 tags:
   - C++ 协程
 description: "C++20标准早已确定。时至今日，各大编译器也已经支持了Coroutine，是时候体验下C++的协程了! "
@@ -33,7 +33,7 @@ int main() {
 }
 ```
 
-但是这个代码其实是无法编译的, 一编译就会有如下报错: 
+但是这个代码其实是无法编译的, 一编译就会有如下报错:
 
 ```
 error: this function cannot be a coroutine: 'std::experimental::coroutines_v1::coroutine_traits<void>' has no member named 'promise_type'
@@ -61,11 +61,11 @@ error: this function cannot be a coroutine: 'std::experimental::coroutines_v1::c
 
 
 
-### coroutine_handle<>
+### coroutine_handle
 
 在实现我们协程之前，首先要聊一下包含于 `<coroutine>` 头中的 `coroutine_handle<>` 类型
 
-根据C++20的标准我们可以知道, C++的协程采用无栈式协程的实现. 这就意味着编译器会帮我们实现一些魔法, 协程挂起时通过魔法(闭包)将变量保存起来, 同时给予开发者一个对象用于控制协程的恢复、销毁. 
+根据C++20的标准我们可以知道, C++的协程采用无栈式协程的实现. 这就意味着编译器会帮我们实现一些魔法, 协程挂起时通过魔法(闭包)将变量保存起来, 同时给予开发者一个对象用于控制协程的恢复、销毁.
 
 这个对象就是 `coroutine_handle<>`
 
@@ -84,11 +84,11 @@ class resumable {
 
     auto initial_suspend() { return suspend_always{}; }
     auto final_suspend() { return suspend_always{}; }
-    
+
     auto get_return_object() {
       return handle::from_promise(*this);
     }
-    
+
     void return_void() {}
     void unhandled_exception() {
       std::terminate();
@@ -119,7 +119,7 @@ class resumable {
 
 ### 运行协程
 
-实现所需要的类型之后, 我们也要把之前的代码修改下: 
+实现所需要的类型之后, 我们也要把之前的代码修改下:
 
 ```c++
 #include <iostream>
